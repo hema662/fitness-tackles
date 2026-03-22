@@ -21,35 +21,35 @@ body {
 
 /* fresh */
 @media (max-width: 767px) {
-    .container-on {
+    .container-two {
         padding-top: 30px;
         padding-left: 30px;
         padding-right: 30px;
     }
 }
 @media (min-width: 768px) {
-    .container-on {
+    .container-two {
         padding-top: 35px;
         padding-left: 35px;
         padding-right: 35px;
     }
 }
 @media (min-width: 992px) {
-    .container-on {
+    .container-two {
         padding-top: 50px;
         padding-left: 50px;
         padding-right: 50px;
     }
 }
 @media (min-width: 1200px) {
-    .container-on {
+    .container-two {
         padding-top: 50px;
         padding-left: 75px;
         padding-right: 75px;
     }
 }
 @media (min-width: 1400px) {
-    .container-on {
+    .container-two {
         padding-top: 50px;
         padding-left: 100px;
         padding-right: 100px;
@@ -57,7 +57,11 @@ body {
 }
 /* end-fresh */
 /* header */
-
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
 .container-one header {
     background-color: var(--main-color);
     height: 75px;
@@ -65,7 +69,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--background-color) 0px 0px 10px 0px;
+    box-shadow: rgb(80, 80, 80) 0px 0px 15px 0px;
 }
 .container-one header .logo {
     text-decoration: none;
@@ -173,5 +177,77 @@ body {
     }
     .container-one header nav {
         padding-right: 75px;
+    }
+}
+/* home-section */
+
+.home {
+    height: 100vh;
+    color: var(--second-text);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(images/gym-background.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    filter: brightness(50%);
+}
+.home .container-two .home-text h1 {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 35px;
+    animation-name: home-texts;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+.home .container-two .home-text h1 span {
+    color: var(--accent-color);
+}
+.home .container-two .home-text p {
+    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    animation: home-texts 1.5s;
+}
+.home .container-two .home-button {
+    margin-top: 35px;
+    animation: home-texts 2s;
+}
+.home .container-two .home-button a {
+    text-decoration: none;
+    color: var(--second-text);
+    border: solid 1px var(--accent-color);
+    padding: 10px;
+    border-radius: 7px;
+    transition: var(--transition);
+}
+.home .container-two .home-button a:hover {
+    background-color: var(--accent-color);
+}
+
+@keyframes home-texts {
+    from {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@media (max-width: 767px) {
+    .home .container-two .home-text {
+        text-align: center;
+    }
+    .home .container-two .home-button {
+        text-align: center;
     }
 }
