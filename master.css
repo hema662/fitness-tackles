@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body {
     font-family: "Roboto", "Inter", sans-serif;
@@ -21,35 +22,40 @@ body {
 
 /* fresh */
 @media (max-width: 767px) {
-    .container-two {
+    .container-two,
+    .container-three {
         padding-top: 30px;
         padding-left: 30px;
         padding-right: 30px;
     }
 }
 @media (min-width: 768px) {
-    .container-two {
+    .container-two,
+    .container-three {
         padding-top: 35px;
         padding-left: 35px;
         padding-right: 35px;
     }
 }
 @media (min-width: 992px) {
-    .container-two {
+    .container-two,
+    .container-three {
         padding-top: 50px;
         padding-left: 50px;
         padding-right: 50px;
     }
 }
 @media (min-width: 1200px) {
-    .container-two {
+    .container-two,
+    .container-three {
         padding-top: 50px;
         padding-left: 75px;
         padding-right: 75px;
     }
 }
 @media (min-width: 1400px) {
-    .container-two {
+    .container-two,
+    .container-three {
         padding-top: 50px;
         padding-left: 100px;
         padding-right: 100px;
@@ -63,13 +69,15 @@ body {
     z-index: 999;
 }
 .container-one header {
-    background-color: var(--main-color);
+    background-color: transparent;
     height: 75px;
-    border-radius: 7px;
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: rgb(80, 80, 80) 0px 0px 15px 0px;
+    border: 1px solid var(--background-color);
+    box-shadow: rgb(50, 50, 50) 0px 0px 10px 0px;
+    filter: blur(10%);
 }
 .container-one header .logo {
     text-decoration: none;
@@ -249,5 +257,104 @@ body {
     }
     .home .container-two .home-button {
         text-align: center;
+    }
+}
+
+/* about-section */
+
+.container-three .about-text {
+    padding-bottom: 75px;
+}
+.container-three .about-text h2 {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+.container-three .about-text p {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+.container-three .about-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-template-areas: "one one one two two two" "one one one three three three";
+    gap: 20px;
+    padding-bottom: 20px;
+}
+.container-three .about-cards .card-one {
+    border: 2px solid var(--main-color);
+    grid-area: one;
+    overflow: hidden;
+    border-radius: 7px;
+    transition: var(--transition);
+}
+.container-three .about-cards .card-one img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+.container-three .about-cards .card-two {
+    border: 2px solid var(--main-color);
+    grid-area: two;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 7px;
+    transition: var(--transition);
+}
+.container-three .about-cards .card-three {
+    border: 2px solid var(--main-color);
+    grid-area: three;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 7px;
+    transition: var(--transition);
+}
+.container-three .about-cards .card-one:hover,
+.container-three .about-cards .card-two:hover,
+.container-three .about-cards .card-three:hover {
+    transform: scale(1.03);
+    box-shadow: rgb(100, 100, 100) 0px 0px 10px 0px;
+}
+.container-three .about-cards .card-two h3,
+.container-three .about-cards .card-three h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.container-three .about-cards .card-two p,
+.container-three .about-cards .card-three li {
+    font-weight: bold;
+    position: relative;
+    line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+    .container-three .about-cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "one one" "two two" "three three";
+        grid-template-rows: 300px 200px 200px;
+    }
+}
+@media (min-width: 768px) {
+    .container-three .about-cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 300px;
+        grid-template-areas: "one one" "two three";
+    }
+}
+@media (min-width: 1200px) {
+    .container-three .about-cards {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 200px 200px ;
+        grid-template-areas: "one one one two two two" "one one one three three three";
     }
 }
