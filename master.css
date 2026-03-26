@@ -18,13 +18,16 @@ body {
     --second-text: #fff;
     --cards: #fff;
     --transition: all ease 0.5s;
+    --box-shadow: rgb(100, 100, 100) 0px 0px 10px 0px;
+    --second-box-shadow:rgb(150, 150, 150) 0px 0px 10px 0px;
 }
 
 /* fresh */
 @media (max-width: 767px) {
     .container-two,
     .container-three,
-    .container-four {
+    .container-four,
+    .container-five {
         width: 100%;
         padding: 30px;
     }
@@ -32,7 +35,8 @@ body {
 @media (min-width: 768px) {
     .container-two,
     .container-three,
-    .container-four {
+    .container-four,
+    .container-five {
         width: 100%;
         padding: 35px;
     }
@@ -40,7 +44,8 @@ body {
 @media (min-width: 992px) {
     .container-two,
     .container-three,
-    .container-four {
+    .container-four,
+    .container-five {
         width: 100%;
         padding: 50px;
     }
@@ -48,7 +53,8 @@ body {
 @media (min-width: 1200px) {
     .container-two,
     .container-three,
-    .container-four {
+    .container-four,
+    .container-five {
         width: 100%;
         padding-top: 50px;
         padding-left: 75px;
@@ -59,7 +65,8 @@ body {
 @media (min-width: 1400px) {
     .container-two,
     .container-three,
-    .container-four {
+    .container-four,
+    .container-five {
         width: 100%;
         padding-top: 50px;
         padding-left: 100px;
@@ -327,7 +334,7 @@ body {
 .container-three .about-cards .card-two:hover,
 .container-three .about-cards .card-three:hover {
     transform: scale(1.03);
-    box-shadow: rgb(100, 100, 100) 0px 0px 10px 0px;
+    box-shadow: var(--box-shadow);
 }
 .container-three .about-cards .card-two h3,
 .container-three .about-cards .card-three h3 {
@@ -369,6 +376,20 @@ body {
 .plans {
     background-color: var(--main-color);
 }
+.container-four .plans-text {
+    color: var(--second-text);
+    padding-bottom: 50px;
+}
+.container-four .plans-text h2 {
+    text-transform: uppercase;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+.container-four .plans-text p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+}
 .container-four .plans-box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -386,7 +407,7 @@ body {
 }
 .container-four .plans-box .plan:hover {
     transform: translateY(-10px);
-    box-shadow: rgb(150, 150, 150) 0px 0px 15px 0px;
+    box-shadow: var(--second-box-shadow);
 }
 .container-four .plans-box .plan .suggested-flag {
     transform: rotate(40deg);
@@ -472,5 +493,70 @@ body {
 @media (min-width: 992px) {
     .container-four .plans-box {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* schedule-section */
+.container-five {
+    color: var(--second-text);
+}
+.container-five .schedule-text {
+    padding-bottom: 50px;
+    color: var(--main-text);
+}
+.container-five .schedule-text h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.container-five .schedule-text p {
+    font-weight: bold;
+    font-size: 18px;
+}
+.container-five .schedule-box .schedule-side table {
+    border-spacing: 2px;
+    text-align: left;
+    
+}
+.container-five .schedule-box .schedule-side table thead {
+    background-color: var(--main-color);
+    border-radius: 7px;
+    color: var(--second-text);
+    box-shadow: var(--second-box-shadow);
+    text-align: center;
+    font-weight: bold;
+}
+.container-five .schedule-box .schedule-side table tr td {
+    border-radius: 4px;
+    padding: 10px;
+}
+.container-five .schedule-box .schedule-side table tbody {
+    background-color: var(--cards);
+    color: var(--main-text);
+    box-shadow: var(--second-box-shadow);
+}
+.container-five .schedule-box .schedule-side table tbody tr td:first-of-type {
+    background-color: var(--main-color);
+    color: var(--second-text);
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .container-five .schedule-box .schedule-side table thead {
+        display: none;
+    }
+    .container-five table tbody tr td {
+        display: block;
+        border-bottom: black 1px solid;
+    }
+}
+@media (min-width: 768px) and (max-width:921px) {
+    .container-five .schedule-box .schedule-side table thead {
+        display: none;
+    }
+    .container-five table tbody tr td {
+        display: block;
+        border-bottom: black 1px solid;
     }
 }
