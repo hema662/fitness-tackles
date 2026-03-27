@@ -27,7 +27,8 @@ body {
     .container-two,
     .container-three,
     .container-four,
-    .container-five {
+    .container-five,
+    .container-six {
         width: 100%;
         padding: 30px;
     }
@@ -36,7 +37,8 @@ body {
     .container-two,
     .container-three,
     .container-four,
-    .container-five {
+    .container-five,
+    .container-six {
         width: 100%;
         padding: 35px;
     }
@@ -45,7 +47,8 @@ body {
     .container-two,
     .container-three,
     .container-four,
-    .container-five {
+    .container-five,
+    .container-six {
         width: 100%;
         padding: 50px;
     }
@@ -54,7 +57,8 @@ body {
     .container-two,
     .container-three,
     .container-four,
-    .container-five {
+    .container-five,
+    .container-six {
         width: 100%;
         padding-top: 50px;
         padding-left: 75px;
@@ -66,7 +70,8 @@ body {
     .container-two,
     .container-three,
     .container-four,
-    .container-five {
+    .container-five,
+    .container-six {
         width: 100%;
         padding-top: 50px;
         padding-left: 100px;
@@ -558,5 +563,160 @@ body {
     .container-five table tbody tr td {
         display: block;
         border-bottom: black 1px solid;
+    }
+}
+
+/* tips-section */
+
+.tips {
+    position: relative;
+    height: 60vh;
+    color: var(--second-text);
+    display: flex;
+    align-items: center;
+}
+.tips::before {
+    content: "";
+    position: absolute;
+    background: url(images/gym-background-tips.jpg) no-repeat ;
+    background-size: cover;
+    top: 0;
+    right: 0;
+    height: 60vh;
+    width: 100%;
+    z-index: -1;
+    filter: brightness(40%);
+}
+.container-six {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-six .tips-text {
+    text-align: center;
+}
+.container-six .tips-text h2 {
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.container-six .tips-text p {
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+/* contact-us-section */
+
+.tips {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-seven {
+    width: 100%;
+}
+.container-seven .contact-box {
+    display: flex;
+    justify-content: space-between;
+}
+.container-seven .contact-box .left-side {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    padding-top: 50px;
+}
+.container-seven .contact-box .left-side form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 350px;
+}
+.container-seven .contact-box .left-side form input {
+    width: 350px;
+    padding: 10px;
+    height: 50px;
+    margin-bottom: 25px;
+    outline: none;
+}
+.container-seven .contact-box .left-side form span {
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.container-seven .contact-box .left-side form textarea {
+    width: 350px;
+    margin-bottom: 25px;
+    height: 100px;
+    outline: none;
+    padding: 10px;
+}
+.container-seven .contact-box .left-side form .submit {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--second-text);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.container-seven .contact-box .right-side {
+    background-color: var(--accent-color);
+    width: 45%;
+    padding: 15px;
+    color: var(--second-text);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.container-seven .contact-box .right-side::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    transform: translate(-80%, -50%);
+    background-color: transparent;
+    border-color: transparent var(--accent-color) transparent transparent;
+    border-width: 25px;
+    border-style: solid;
+}
+.container-seven .contact-box .right-side .right-text {
+    padding-bottom: 25px;
+    width: 100%;
+    font-size: 25px;
+    position: relative;
+}
+.container-seven .contact-box .right-side .information-links .location,
+.container-seven .contact-box .right-side .information-links .email,
+.container-seven .contact-box .right-side .information-links .phone-number {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+.container-seven .contact-box .right-side .information-links .location i,
+.container-seven .contact-box .right-side .information-links .email i,
+.container-seven .contact-box .right-side .information-links .phone-number i {
+    padding-bottom: 25px;
+}
+.container-seven .contact-box .right-side .information-links .location a,
+.container-seven .contact-box .right-side .information-links .email a,
+.container-seven .contact-box .right-side .information-links .phone-number a {
+    color: var(--second-text);
+}
+
+@media (max-width: 767px) {
+    .container-seven .contact-box {
+        flex-wrap: wrap;
+    }
+    .container-seven .contact-box .left-side,
+    .container-seven .contact-box .right-side {
+        width: 100%;
+    }
+    .container-seven .contact-box .left-side form {
+        width: 300px;
+    }
+    .container-seven .contact-box .left-side form input,
+    .container-seven .contact-box .left-side form textarea {
+        width: 300px;
     }
 }
