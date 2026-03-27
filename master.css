@@ -682,6 +682,7 @@ body {
 }
 .container-seven .contact-box .right-side .right-text {
     padding-bottom: 25px;
+    text-align: center;
     width: 100%;
     font-size: 25px;
     position: relative;
